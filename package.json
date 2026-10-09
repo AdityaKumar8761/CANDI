@@ -1,0 +1,52 @@
+{
+  "name": "cldr",
+  "version": "1.0.0",
+  "description": "CANDI voice assistant desktop application",
+  "homepage": "https://example.com/candi",
+  "desktopName": "candi",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package": "electron-builder --linux AppImage deb"
+  },
+  "author": {
+    "name": "CANDI",
+    "email": "candi@example.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.6",
+    "google-tts-api": "^0.0.6",
+    "nodemon": "^1.14.10"
+  },
+  "devDependencies": {
+    "electron": "^44.7.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.candi.desktop",
+    "productName": "CANDI",
+    "asar": true,
+    "files": [
+      "index.html",
+      "styles.css",
+      "script.js",
+      "main.js",
+      "preload.js",
+      ".env",
+      ".env.example",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "executableName": "candi"
+    },
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}"
+  }
+}

@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist
+
+# Generated builds
+dist/
+release/
+out/
+node_modules/
